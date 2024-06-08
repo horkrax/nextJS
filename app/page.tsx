@@ -33,7 +33,7 @@ export default function Home() {
       <button onClick={odcitaj} className="pt-2 pb-2 bg-teal-500 pl-8 pr-8 text-white ">{handler}</button>
       <h1>klikni na cislo a odcitaj ho</h1>
 
-  <Toast.Provider swipeDirection="top">
+  <Toast.Provider swipeDirection="left">
     <Button
       variant="destructive"
       className=""
