@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
+import * as Toast from '@radix-ui/react-toast';
 import { useState } from "react"
 
 export default function Home() {
@@ -32,8 +33,8 @@ export default function Home() {
       <button onClick={odcitaj} className="pt-2 pb-2 bg-teal-500 pl-8 pr-8 text-white ">{handler}</button>
       <h1>klikni na cislo a odcitaj ho</h1>
 
-
-        <Button
+  <Toast.Provider swipeDirection="top">
+    <Button
       variant="destructive"
       className=""
       onClick={() => {
@@ -42,12 +43,16 @@ export default function Home() {
           variant: "destructive",
           title: "Oops citim klik.",
           description: "klikol si",
+          duration: 2000,
           action: <ToastAction onClick={resetuj} altText="Try again">Resetovať</ToastAction>,
         })
       }}
     >
       Klikni a zobraz upozornenie
     </Button>
+  </Toast.Provider>
+
+    
 
     </div>
   );
